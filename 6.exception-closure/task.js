@@ -1,8 +1,9 @@
 ﻿function parseCount(quantityProduct) {
-    if(Number.isNaN(Number.parseFloat(quantityProduct))) {
+    let parseFunc = Number.parseFloat(quantityProduct);
+    if(Number.isNaN(parseFunc)) {
         throw new Error("Невалидное значение");
     }
-    return parseFloat(quantityProduct);
+    return parseFunc;
 }
 
 function validateCount(quantityProduct) {
@@ -39,10 +40,13 @@ function getTriangle(a, b, c) {
      return new Triangle(a, b, c);
    } catch(error) {
 
-    return get area() {
-        return "Ошибка! Треугольник не существует";}
-    
-    return get perimeter () {
-        return "Ошибка! Треугольник не существует";}
+        return {
+            get area() {
+            return "Ошибка! Треугольник не существует";
+            },
+            get perimeter () {
+            return "Ошибка! Треугольник не существует";
+            }
+        };
     }
 }
