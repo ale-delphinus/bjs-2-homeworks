@@ -14,11 +14,16 @@ class AlarmClock {
     }
 
     removeClock(time) {
-        this.alarmCollection.filter((alarm) => alarm.time !== time);
+        this.alarmCollection = this.alarmCollection.filter((alarm) => alarm.time !== time);
     }
+    
 
-    getCurrentFormattedTime() { // Не понимаю, как расписать этот метод
-        return
+    getCurrentFormattedTime() { 
+        return new Date().toLocaleTimeString("ru-Ru", 
+            {
+            hour: "2-digit",
+            minute: "2-digit",
+          });
     }
 
     start() {
